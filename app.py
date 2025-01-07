@@ -84,9 +84,10 @@ def extract_topn_from_vector(feature_names, sorted_items, topn=10):
     results = {feature_names[idx]: round(score, 3) for idx, score in sorted_items}
     return results
 
-@app.route('/', methods=['POST'])
+@app.route('/')
 def health():
-	print("Working Fine")
+    print("Working Fine")  # Debug message printed in the console
+    return "Working Fine!"  # Response sent to the client
 #############################################
 @app.route('/networkgraphData/<string:table_id>', methods=['GET'])
 def networkgraphData(table_id):
